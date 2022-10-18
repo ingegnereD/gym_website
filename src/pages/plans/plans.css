@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@300;400;500;700;800&family=Poppins:wght@100;200;300;400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.plans {
+  height: auto;
+  width: 85%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+.plans .silver h3,
+.plans .gold h3,
+.plans .platinum h3 {
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+.plans .silver small,
+.plans .gold small,
+.plans .platinum small {
+  font-size: 0.8rem;
+  font-family: "Montserrat", sans-serif;
+  color: #CCCCFF;
+  line-height: 1.2rem;
+}
+.plans .silver h1,
+.plans .gold h1,
+.plans .platinum h1 {
+  font-size: 1.85rem;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+.plans .silver h1 span,
+.plans .gold h1 span,
+.plans .platinum h1 span {
+  font-size: 1.4rem;
+  font-family: "Montserrat", sans-serif;
+  color: #CCCCFF;
+}
+.plans .silver h5,
+.plans .gold h5,
+.plans .platinum h5 {
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  font-weight: 500;
+}
+.plans .silver .first,
+.plans .gold .first,
+.plans .platinum .first {
+  font-size: 1.4rem;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+.plans .silver .small,
+.plans .gold .small,
+.plans .platinum .small {
+  color: #CCCCFF;
+}
+.plans .silver:hover h3,
+.plans .silver:hover small,
+.plans .silver:hover h1,
+.plans .gold:hover h3,
+.plans .gold:hover small,
+.plans .gold:hover h1,
+.plans .platinum:hover h3,
+.plans .platinum:hover small,
+.plans .platinum:hover h1 {
+  color: #262626;
+}
+.plans .silver:hover h5,
+.plans .gold:hover h5,
+.plans .platinum:hover h5 {
+  color: #262626;
+}
+.plans .silver:hover .small,
+.plans .gold:hover .small,
+.plans .platinum:hover .small {
+  color: rgb(161, 160, 160);
+}
+
+@media screen and (max-width: 991px) {
+  .plans {
+    width: 96%;
+    gap: 1.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .plans {
+    width: 98%;
+  }
+}/*# sourceMappingURL=plans.css.map */

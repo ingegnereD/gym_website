@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@300;400;500;700;800&family=Poppins:wght@100;200;300;400;500;600&display=swap');
+$bg-color: #FAF6FE;
+$full-bg-color: #241445;
+// $full-bg-color: $bg-color;
+$white-color: white;
+$text-color: #262626;
+$danger-color: #FF1A1A;
+$success-color: #00CC00;
+$warning-color:#F97325;
+$primary-color: #4D4DFF;
+$hover-color: #6666FF;
+$special-color:#3333FF;
+$hover-color: #8080FF;
+$table-border-color:#CCCCFF;
+$seconday-color: #A6A6A6;
+$font-mont: 'Montserrat',
+sans-serif;
+$font-manrope: 'Manrope',
+sans-serif;
+$font-pop: 'Poppins',
+sans-serif;
+$header-height: 5rem;
+$calc-height: calc(100vh - $header-height);
+$transition: all 500ms ease;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@mixin area($height: 100%,
+$width: 100%) {
+    height: $height;
+    width: $width;
+}
+
+@mixin resGrid($var) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($var, 1fr));
+}
+
+@mixin flex($direction: row,
+$jContent: center,
+$aItems: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $jContent;
+    align-items: $aItems;
+}
+
+@mixin autoCol($var) {
+    display: grid;
+    grid-template-columns: repeat($var, auto);
+}
+
+@mixin autoRow($var) {
+    display: grid;
+    grid-template-rows: repeat($var, auto);
+}
+
+@mixin font($size,
+$family,
+$color) {
+    font-size: $size;
+    font-family: $family;
+    color: $color;
+}
+
+main {
+    @include area(auto,
+    100%);
+    max-height: auto;
+    @include flex;
+    .main-container {
+        @include area;
+        .welcome-page {
+            @include area(calc(100vh - $header-height),
+            100%);
+            background-position: center;
+            background-size: cover;
+            margin: 0 auto;
+            @include flex;
+            .welcome-page-element {
+                margin-top: 7.5rem;
+                border-radius: 1rem;
+                @include area(40%,
+                60%);
+                @include autoRow(4);
+                place-items: center;
+                text-align: center;
+                h4 {
+                    @include font(1.2rem,
+                    $font-mont,
+                    $warning-color);
+                }
+                h1 {
+                    @include font(2.5rem,
+                    $font-pop,
+                    $white-color);
+                }
+                p {
+                    @include font(1.1rem,
+                    $font-manrope,
+                    $white-color);
+                    line-height: 1.75rem;
+                }
+                button {
+                    padding: .8rem 1.4rem;
+                    @include font(1.2rem,
+                    $font-mont,
+                    $white-color);
+                    background-color: $hover-color;
+                    border: 1px solid $hover-color;
+                    &:hover {
+                        background: transparent;
+                    }
+                }
+            }
+            margin-bottom: 5rem;
+        }
+        // --------------END OF WELCOME PAGE-----------------------
+        //-------------------------------------------------
+        //-----------------BEGINNING OF PROGRAMS--------------------
+        .programs {
+            width: 100%;
+            margin: 0 auto;
+            height: auto;
+            min-height: 100vh;
+            @include flex;
+            .cont {
+                @include area(auto,
+                85%);
+                @include autoRow(2);
+                gap: 3rem;
+                .top {
+                    @include area(fit-content,
+                    fit-content);
+                    @include autoCol(2);
+                    place-items: center;
+                    gap: .75rem;
+                    span {
+                        font-size: 1.65rem;
+                        color: orange;
+                        background-color: $hover-color;
+                        padding: .25rem;
+                        border-radius: .45rem;
+                    }
+                    h3 {
+                        @include font(1.5rem,
+                        $font-pop,
+                        $text-color);
+                    }
+                }
+                .card-element {
+                    @include area(auto,
+                    100%);
+                    @include resGrid(16rem);
+                    gap: 1rem;
+                }
+            }
+            margin-bottom: 5rem;
+        }
+        // ------------------------PROGRAMS-----------------------
+        //-------------------------------------------------
+        //-----------------BEGINNING OF VALUES--------------------
+        .values {
+            display: none;
+            @include area(fit-content,
+            100%);
+            @include flex;
+            .cont {
+                width: 85%;
+                @include flex;
+                .left {
+                    @include area(100vh,
+                    45%);
+                    border: .4rem;
+                    border-top-right-radius: 2rem;
+                    border-bottom-left-radius: 2rem;
+                }
+                .right {
+                    @include area(100vh,
+                    55%);
+                    @include flex(row,
+                    flex-end,
+                    center);
+                    .cont {
+                        @include area(100%,
+                        85%);
+                        @include flex(column,
+                        center,
+                        center);
+                        gap: 2rem;
+                        .top {
+                            @include area(22.5%,
+                            100%);
+                            @include flex(column,
+                            flex-start,
+                            flex-start);
+                            gap: 2rem;
+                            article {
+                                @include area(35%,
+                                fit-content);
+                                @include autoCol(2);
+                                place-items: start;
+                                gap: .75rem;
+                                span {
+                                    font-size: 1.65rem;
+                                    color: orange;
+                                    background-color: $hover-color;
+                                    padding: .25rem;
+                                    border-radius: .45rem;
+                                    @include flex;
+                                }
+                                h3 {
+                                    @include font(1.5rem,
+                                    $font-pop,
+                                    $text-color);
+                                }
+                            }
+                            p {
+                                @include area(65%,
+                                100%);
+                                @include font(1rem,
+                                $font-mont,
+                                $text-color);
+                                line-height: 1.75rem
+                            }
+                        }
+                        .body {
+                            @include area(87.5%,
+                            100%);
+                            @include resGrid(14rem);
+                            gap: 1.5rem;
+                            .vCard {
+                                // padding: 2rem 0;
+                                // height: calc(100% / 2);
+                                margin: 0;
+                                position: relative;
+                                span {
+                                    position: absolute;
+                                    top: -1.5rem
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // ------------------------END OF VALUES-----------------------
+        //-----------------------------------------------------------
+        //-----------------BEGINNING OF FAQ--------------------
+        .freq-question {
+            @include area(calc(100vh - $header-height),
+            100%);
+            @include flex;
+            .cont {
+                height: auto;
+                width: 85%;
+                @include autoRow(2);
+                gap: 3rem;
+                .top {
+                    @include area(fit-content,
+                    fit-content);
+                    @include autoCol(2);
+                    place-items: center;
+                    gap: .75rem;
+                    span {
+                        font-size: 1.65rem;
+                        color: orange;
+                        background-color: $hover-color;
+                        padding: .25rem;
+                        border-radius: .45rem;
+                    }
+                    h3 {
+                        @include font(1.5rem,
+                        $font-pop,
+                        $text-color);
+                    }
+                }
+                .body {
+                    @include area(fit-content,
+                    100%);
+                    @include resGrid(25rem);
+                    gap: 2rem;
+                    .freq-card {
+                        height: fit-content;
+                        width: 100%;
+                        @include flex(column,
+                        center,
+                        flex-start);
+                        background-color: $hover-color;
+                        border-radius: 1px solid $hover-color;
+                        border-radius: .35rem;
+                        cursor: pointer;
+                        .header {
+                            border-radius: .35rem;
+                            padding: .5rem .75rem;
+                            @include area(max-content,
+                            100%);
+                            background-color: $hover-color;
+                            @include flex;
+                            h4 {
+                                width: 95%;
+                                @include font(1.1rem,
+                                $font-mont,
+                                $white-color);
+                                line-height: 1.55rem;
+                            }
+                            button {
+                                width: 5%;
+                                background: transparent;
+                                border: none;
+                                color: $white-color;
+                                font-size: 1.75rem;
+                                transition: $transition;
+                            }
+                        }
+                        p {
+                            padding: 0 .75rem;
+                            padding-bottom: .5rem;
+                            @include font(1rem,
+                            $font-mont,
+                            $white-color);
+                            line-height: 1.5rem;
+                            cursor: default;
+                            transition: $transition;
+                        }
+                        transition: $transition;
+                    }
+                }
+            }
+            margin-bottom: 10rem;
+            // display: none;
+        }
+        // ------------------------END OF FAQ-----------------------
+        //-----------------------------------------------------------
+        //-----------------BEGINNING OF TESTIMONIAL--------------------
+        .testimonial {
+            @include area(auto,
+            100%);
+            @include flex;
+            .cont {
+                @include area(100%,
+                24.75rem);
+                place-items: center;
+                @include autoRow(2);
+                gap: 2rem;
+                .top {
+                    @include area(fit-content,
+                    fit-content);
+                    @include autoCol(2);
+                    place-items: center;
+                    gap: .75rem;
+                    span {
+                        font-size: 1.65rem;
+                        color: orange;
+                        background-color: $hover-color;
+                        padding: .25rem;
+                        border-radius: .45rem;
+                    }
+                    h3 {
+                        @include font(1.5rem,
+                        $font-pop,
+                        $text-color);
+                    }
+                }
+                .body {
+                    @include area;
+                    @include autoRow(2);
+                    gap: 1rem;
+                    .testimonial-cont {
+                        overflow-x: auto;
+                        @include autoCol(8);
+                        .testimonial-element {
+                            height: 24.75rem;
+                            width: 24.75rem;
+                            transition: $transition;
+                            .image {
+                                @include area(5rem,
+                                auto);
+                                border-top-right-radius: .45rem;
+                                border-bottom-left-radius: .45rem;
+                                padding: .2rem;
+                                background-color: $table-border-color;
+                                transition: $transition;
+                                img {
+                                    @include area(100%,
+                                    auto);
+                                    min-width: 5rem;
+                                    border-top-right-radius: .45rem;
+                                    border-bottom-left-radius: .45rem;
+                                }
+                            }
+                            transition: $transition;
+                            &:hover {
+                                .image {
+                                    background-color: $hover-color;
+                                    .image {
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .pagination {
+                        height: 3rem;
+                        width: fit-content;
+                        margin: 0 auto;
+                        @include autoCol(2);
+                        place-items: center;
+                        gap: 1rem;
+                        span {
+                            background-color: $hover-color;
+                            padding: .55rem .85rem;
+                            border-radius: .5rem;
+                            cursor: pointer;
+                            border: 1px solid $hover-color;
+                            transition: $transition;
+                            &:hover {
+                                background-color: transparent;
+                                color: $hover-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//----------------------MEDIA QUERIES-------------------------
+// for smaller pcs width from 992 - 1250px
+@media screen and (max-width: 1250px) {
+    main {
+        .main-container {
+            .values {
+                .cont {
+                    flex-direction: column;
+                    gap: 2rem;
+                    .left {
+                        width: 100%
+                    }
+                    .right {
+                        height: fit-content;
+                        width: 100%;
+                        .cont {
+                            @include area;
+                            gap: 3rem;
+                            .body {
+                                gap: 1.75rem;
+                                .vCard {
+                                    padding-top: 3rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    main {
+        .main-container {
+            .welcome-page {
+                .welcome-page-element {
+                    width: 70%;
+                }
+            }
+        }
+    }
+    main {
+        .main-container {
+            .programs {
+                .cont {
+                    width: 96%;
+                }
+            }
+            .values {
+                .cont {
+                    width: 96%;
+                }
+            }
+            .freq-question {
+                .cont {
+                    width: 96%;
+                    .body {
+                        @include resGrid(18rem);
+                        gap: .75rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        .main-container {
+            .welcome-page {
+                .welcome-page-element {
+                    width: 90%;
+                }
+            }
+        }
+    }
+    .programs {
+        .cont {
+            width: 98%;
+        }
+    }
+    .values {
+        .cont {
+            width: 98%;
+        }
+    }
+    .freq-question {
+        margin-top: 15rem;
+        .cont {
+            width: 98%;
+        }
+    }
+}

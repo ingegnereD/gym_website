@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@300;400;500;700;800&family=Poppins:wght@100;200;300;400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.trainers {
+  height: auto;
+  width: 85%;
+  margin: 5rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+}
+.trainers .trainer-Card {
+  border: 1px solid #8080FF;
+  border-top-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  background-color: #8080FF;
+  height: 30rem;
+  width: 100%;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 500ms ease;
+}
+.trainers .trainer-Card .pic {
+  border-top-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  height: 70%;
+  width: 100%;
+  filter: grayscale(1);
+}
+.trainers .trainer-Card .info {
+  height: 30%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  place-items: center;
+}
+.trainers .trainer-Card .info h2 {
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  transition: all 500ms ease;
+}
+.trainers .trainer-Card .info h5 {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  font-weight: 400;
+  transition: all 500ms ease;
+}
+.trainers .trainer-Card .info .social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.trainers .trainer-Card .info .social span {
+  border-top-right-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+  border: 1px solid white;
+  padding: 0.55rem 0.65rem;
+  font-size: 1.35rem;
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+.trainers .trainer-Card:hover {
+  background-color: transparent;
+}
+.trainers .trainer-Card:hover .pic {
+  filter: grayscale(0);
+}
+.trainers .trainer-Card:hover .info h2,
+.trainers .trainer-Card:hover .info h5 {
+  color: #262626;
+}
+.trainers .trainer-Card:hover .info .social span {
+  background-color: #8080FF;
+}
+
+@media screen and (max-width: 991px) {
+  .trainers {
+    width: 96%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .trainers {
+    width: 98%;
+  }
+}/*# sourceMappingURL=trainer.css.map */

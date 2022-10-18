@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@300;400;500;700;800&family=Poppins:wght@100;200;300;400;500;600&display=swap');
+$bg-color: #FAF6FE;
+$full-bg-color: #241445;
+// $full-bg-color: $bg-color;
+$white-color: white;
+$text-color: #262626;
+$danger-color: #FF1A1A;
+$success-color: #00CC00;
+$warning-color:#F97325;
+$primary-color: #4D4DFF;
+$hover-color: #6666FF;
+$special-color:#3333FF;
+$hover-color: #8080FF;
+$table-border-color:#CCCCFF;
+$seconday-color: #A6A6A6;
+$font-mont: 'Montserrat',
+sans-serif;
+$font-manrope: 'Manrope',
+sans-serif;
+$font-pop: 'Poppins',
+sans-serif;
+$header-height: 5rem;
+$calc-height: calc(100vh - $header-height);
+$transition: all 500ms ease;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin area($height: 100%,
+$width: 100%) {
+    height: $height;
+    width: $width;
+}
+
+@mixin resGrid($var) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($var, 1fr));
+}
+
+@mixin flex($direction: row,
+$jContent: center,
+$aItems: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $jContent;
+    align-items: $aItems;
+}
+
+@mixin autoCol($var) {
+    display: grid;
+    grid-template-columns: repeat($var, auto);
+}
+
+@mixin autoRow($var) {
+    display: grid;
+    grid-template-rows: repeat($var, auto);
+}
+
+@mixin font($size,
+$family,
+$color) {
+    font-size: $size;
+    font-family: $family;
+    color: $color;
+}
+
+.plans {
+    @include area(auto,
+    85%);
+    margin: 0 auto;
+    @include resGrid(16rem);
+    gap: 1rem;
+    .silver,
+    .gold,
+    .platinum {
+        h3 {
+            @include font(1.5rem,
+            $font-mont,
+            $white-color);
+        }
+        small {
+            @include font(.8rem,
+            $font-mont,
+            $table-border-color);
+            line-height: 1.2rem;
+        }
+        h1 {
+            @include font(1.85rem,
+            $font-mont,
+            $white-color);
+            span {
+                @include font(1.4rem,
+                $font-mont,
+                $table-border-color)
+            }
+        }
+        h5 {
+            @include font(1.2rem,
+            $font-mont,
+            $white-color);
+            font-weight: 500;
+        }
+        .first {
+            @include font(1.4rem,
+            $font-mont,
+            $white-color);
+        }
+        .small {
+            color: $table-border-color;
+        }
+        &:hover {
+            h3,
+            small,
+            h1 {
+                color: $text-color;
+            }
+            h5 {
+                color: #262626;
+            }
+            .small {
+                color: rgb(161, 160, 160);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .plans {
+        width: 96%;
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .plans {
+        width: 98%;
+    }
+}
